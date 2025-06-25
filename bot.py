@@ -327,7 +327,7 @@ async def calc(interaction: discord.Interaction, a: int, b: int, op: app_command
 class SlotView(View):
     def __init__(self):
         super().__init__(timeout=60)
-        self.emojis = ["🍒", "🍋", "🔔", "⭐", "🍀", "🍇"]
+        self.emojis = ["🐧", "🍒", "🔔", "🦊"]
         self.running = False
         self.message = None
 
@@ -354,7 +354,7 @@ class SlotView(View):
 
                 embed.set_field_at(0, name="結果", value=" ".join(slots), inline=False)
                 await self.message.edit(embed=embed, view=self)
-                await asyncio.sleep(0.2)
+                await asyncio.sleep(0.02)
 
         if final_slots[0] == final_slots[1] == final_slots[2]:
             result_msg = f"🎉 大当たり！ {''.join(final_slots)} が揃ったなえ！"
